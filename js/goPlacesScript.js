@@ -79,6 +79,7 @@ var setCurrLoc = function()
       
     });
   }
+  
   createLink();
   
   console.log("googleGeoLink is ");
