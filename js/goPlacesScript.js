@@ -2,8 +2,8 @@
 
 
 var selectedTypes, loc, radius;
-var longi;
-var lati;
+var longi, lati;
+var savedlong, savedlati;
 var googleGeoCodeAPIKey = "AIzaSyAo2fOi3pBK404sfrRnzJc2zQN31eqJsrY";
 var googleFusionAPIKey =  "AIzaSyD2NeLNyyuB9aMfKH8J6hZgTWW6j8c0u5Q";
 var accessTableFusionId = "1zuRMjqvXx8gNz58R7vTNJL-iJV9XcqNsgTVR8_0";
@@ -34,6 +34,8 @@ $("document").ready(function(){
       console.log('Longitude: ' + crd.longitude);
       console.log('More or less ' + crd.accuracy + ' meters.');
 
+      savedlati = crd.latitude;
+      savedlong = crd.longitude;
        longi = crd.longitude;
        lati = crd.latitude;
       // lati = 40.7127;
@@ -79,12 +81,10 @@ var setCurrLoc = function()
       
     });
   }
-  
   createLink();
-  
+
   console.log("googleGeoLink is ");
   console.log(googleGeoLink);
-
 };
 
 
@@ -98,8 +98,8 @@ var reset = function()
   showWheel = false;
   showBlind = false;
   showHear = false;
-  longi = crd.longitude;
-  lati = crd.latitude;
+  longi = savedlong;
+  lati = savedlati;
 };
  
 
