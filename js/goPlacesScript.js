@@ -76,9 +76,10 @@ var setCurrLoc = function()
     {
       longi = data.results[0].geometry.location.lng;
       lati = data.results[0].geometry.location.lat;
-      createLink();
+      
     });
   }
+  createLink();
   
   console.log("googleGeoLink is ");
   console.log(googleGeoLink);
