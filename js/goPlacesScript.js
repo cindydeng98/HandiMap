@@ -68,19 +68,22 @@ $("document").ready(function(){
 
 var setCurrLoc = function()
 {
-  googleGeoLink += loc + "&key=" + googleGeoCodeAPIKey;
-  googleGeoLink = googleGeoLink.replace(/ /g, "+");
+  if(loc != "")
+  {
+    googleGeoLink += loc + "&key=" + googleGeoCodeAPIKey;
+    googleGeoLink = googleGeoLink.replace(/ /g, "+");
+    $.getJSON(googleGeoLink, function (data) 
+    {
+      longi = data.results[0].geometry.location.lng;
+      lati = data.results[0].geometry.location.lat;
+      
+    });
+  }
+  
+  createLink();
+  
   console.log("googleGeoLink is ");
   console.log(googleGeoLink);
-
-  $.getJSON(googleGeoLink, function (data) 
-  {
-    longi = data.results[0].geometry.location.lng;
-    lati = data.results[0].geometry.location.lat;
-    createLink();
-  });
-
-  //createLink();
 
 };
 
@@ -95,6 +98,8 @@ var reset = function()
   showWheel = false;
   showBlind = false;
   showHear = false;
+  longi = crd.longitude;
+  lati = crd.latitude;
 };
  
 
