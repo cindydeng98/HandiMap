@@ -98,6 +98,8 @@ var reset = function()
   showWheel = false;
   showBlind = false;
   showHear = false;
+  longi = crd.longitude;
+  lati = crd.latitude;
 };
  
 
