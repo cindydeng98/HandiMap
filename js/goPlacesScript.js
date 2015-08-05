@@ -68,7 +68,7 @@ $("document").ready(function(){
 
 var setCurrLoc = function()
 {
-  if(loc != "")
+  if(loc.length>0)
   {
     googleGeoLink += loc + "&key=" + googleGeoCodeAPIKey;
     googleGeoLink = googleGeoLink.replace(/ /g, "+");
@@ -80,9 +80,11 @@ var setCurrLoc = function()
       
     });
   }
+  else
+  {
+    createLink();
+  }  
   
-  createLink();
-
   console.log("googleGeoLink is ");
   console.log(googleGeoLink);
 
