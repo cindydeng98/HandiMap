@@ -1,5 +1,4 @@
-// COPY TO MESS WITH
-
+// COPY TO MESS WITH: DONE AS OF 8/5/15
 
 var selectedTypes, loc, radius;
 var longi, lati;
