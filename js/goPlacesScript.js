@@ -35,14 +35,13 @@ $("document").ready(function(){
       console.log('More or less ' + crd.accuracy + ' meters.');
 
        
-       if(error.code != error.PERMISSION_DENIED)
-       {
+      
          longi = crd.longitude;
          lati = crd.latitude;
          savedlo = longi;
          savedla = lati;
          initializeMap();
-       }
+      
       
     };
 
