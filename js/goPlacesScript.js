@@ -34,18 +34,24 @@ $("document").ready(function(){
       console.log('Longitude: ' + crd.longitude);
       console.log('More or less ' + crd.accuracy + ' meters.');
 
-       longi = crd.longitude;
-       lati = crd.latitude;
-       savedlo = longi;
-       savedla = lati;
-      // lati = 40.7127;
-      // longi = -74.0059;
-      initializeMap();
-
+       
+       if(error.code != error.PERMISSION_DENIED)
+       {
+         longi = crd.longitude;
+         lati = crd.latitude;
+         savedlo = longi;
+         savedla = lati;
+         initializeMap();
+       }
+      
     };
 
     function error(err) {
       console.warn('ERROR(' + err.code + '): ' + err.message);
+      lati = 40.7127;
+          longi = -74.0059;
+          initializeMap();
+          alert("You denied geolocation. Current location will be set in New York City.");
     };
 
     navigator.geolocation.getCurrentPosition(success, error, {timeout: 10000});
