@@ -45,11 +45,11 @@ $("document").ready(function(){
 
     function error(err) {
       console.warn('ERROR(' + err.code + '): ' + err.message);
-    //   savedlo = longi;
-    //  savedla = lati;
-    //   lati = 40.7127;
-    //       longi = -74.0059;
-    //       initializeMap();
+    savedlo = longi;
+      savedla = lati;
+       lati = 40.7127;
+           longi = -74.0059;
+           initializeMap();
           alert("You denied geolocation. Current location will be set in New York City.");
     };
 
