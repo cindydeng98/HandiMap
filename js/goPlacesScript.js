@@ -38,9 +38,7 @@ $("document").ready(function(){
      lati = crd.latitude;
      savedlo = longi;
      savedla = lati;
-     initializeMap();
-      
-      
+     initializeMap();      
     };
 
     function error(err) {
@@ -82,20 +80,16 @@ var setCurrLoc = function()
       longi = data.results[0].geometry.location.lng;
       lati = data.results[0].geometry.location.lat;
       createLink();
-      
     });
   }
   else
   {
     createLink();
-  }  
-  
+  } 
   console.log("googleGeoLink is ");
   console.log(googleGeoLink);
 
 };
-
-
 
 var reset = function()
 {
